@@ -1,0 +1,156 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #000;
+}
+
+/* Header and background */
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url("image.jpeg"); /* Your uploaded background image file */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay with gradient for readability */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+/* Navigation bar */
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between; /* Logo left, button right */
+  align-items: center;
+  padding: 24px 56px;
+}
+
+.logo {
+  width: 140px;
+}
+
+/* Sign In button on right */
+.signin-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.signin-btn:hover {
+  background-color: #f40612;
+}
+
+/* Content on top of overlay */
+.header-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 180px;
+}
+
+.header-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.header-content h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.header-content h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+/* Email signup form styling */
+.email-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.email-signup input {
+  width: 380px;
+  padding: 18px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #666;
+  color: white;
+  border-radius: 4px;
+}
+
+.email-signup input::placeholder {
+  color: #ccc;
+}
+
+.email-signup button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect on signup button */
+.email-signup button:hover {
+  background-color: #f40612;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    padding-top: 140px;
+    padding-inline: 20px;
+  }
+
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .email-signup {
+    flex-direction: column;
+  }
+
+  .email-signup input,
+  .email-signup button {
+    width: 100%;
+    max-width: 420px;
+  }
+}
